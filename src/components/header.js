@@ -1,23 +1,29 @@
 import React from 'react';
 
 import {
-    SafeAreaView,
     StyleSheet,
     Text,
     Image,
-    StatusBar,
     View,
+    TouchableOpacity,
   } from 'react-native';
+
 let Add = require('../assets/add.png');
 
 
-const Header = () => {
+const Header = ({
+    showForm,
+  }) => {
     return (
         <View style={styles.container}>
           <Text style={styles.title}>Report List</Text>
-          <Image style={styles.img} source={Add} />
+
+        <TouchableOpacity onPress={showForm} >
+            <Image style={styles.img} source={Add} />
+        </TouchableOpacity>
+          
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({
@@ -40,4 +46,5 @@ const styles = StyleSheet.create({
         height: 32,
     },
 });
+
 export default Header;

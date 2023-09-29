@@ -69,25 +69,15 @@ const App = () => {
   //   realm.close();
   // }
 
-  const renderItem = ({item}) => {
-    const backgroundColor = item.id === selectedId ? '#808080' : '#C5C5C5';
-    const color = item.id === selectedId ? 'white' : 'black';
-
-    return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item._id)}
-        backgroundColor={{backgroundColor}}
-        textColor={{color}}
-      />
-    );
-  };
+  const showForm = () => {
+    console.log('calling filter');
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       {show ? (
         <View>
-          <Header></Header>
+          <Header showForm={showForm}></Header>
         </View>
         // <FlatList
         //   data={data}
@@ -100,7 +90,10 @@ const App = () => {
       )}
     </SafeAreaView>
   );
+
+  
 };
+
 
 const styles = StyleSheet.create({
   container: {
